@@ -3,8 +3,20 @@ import unittest
 
 class TestEmotionDetector(unittest.TestCase):
     def test_emotion_detector(self):
-        # Test case for positive sentiment
-        result = emotion_detector('I love working with Python')
+        # Test case for joy
+        result = emotion_detector('I am glad this happened')
         self.assertEqual(result['dominant_emotion'], 'joy')
+        # Test case for anger
+        result = emotion_detector(' am really mad about this')
+        self.assertEqual(result['dominant_emotion'], 'anger')
+        # Test case for disgust
+        result = emotion_detector('I feel disgusted just hearing about this')
+        self.assertEqual(result['dominant_emotion'], 'disgust')
+        # Test case for sadness
+        result = emotion_detector('I am so sad about this')
+        self.assertEqual(result['dominant_emotion'], 'sadness')
+        # Test case for fear
+        result = emotion_detector('I am really afraid that this will happen')
+        self.assertEqual(result['dominant_emotion'], 'fear')
 
 unittest.main()
